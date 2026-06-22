@@ -360,7 +360,7 @@ footer .small{font-size:12.5px;color:var(--mid);border-top:1px solid var(--line)
 
   if(reduce){ document.querySelectorAll('[data-count]').forEach(function(el){ el.textContent=el.getAttribute('data-count'); }); return; }
 
-  var lenis=new Lenis({duration:1.25, easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));}, smoothWheel:true});
+  var lenis=new Lenis({lerp:0.2, wheelMultiplier:1, smoothWheel:true, syncTouch:false});
   function raf(t){ lenis.raf(t); requestAnimationFrame(raf); } requestAnimationFrame(raf);
 
   if(window.gsap && window.ScrollTrigger){
